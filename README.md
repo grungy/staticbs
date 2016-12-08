@@ -48,6 +48,15 @@ points where the B field will be evaluated.
       * the location of the B field data
       * the location of the E field data if applicable
 
+
+### Output examples
+
+#### B field plot of two regular octagons with a radius of 71.53mm in Helmholtz coil configuration
+![B field plot of two regular octagons with a radius of 71.53mm in Helmholtz coil configuration]( https://github.com/grungy/static-bs/blob/master/imgs/regular_octagon_helmholtz_71.53mm_radius.png)
+
+#### E field plot of two regular octagons with a radius of 71.53mm in a Helmholtz coil configuration and a fluid moving uniformly in the x direction at 1cm / s
+![E field plot of two regular octagons with a radius of 71.53mm in a Helmholtz coil configuration and a fluid moving uniformly in the x direction at 1cm / s](https://github.com/grungy/static-bs/blob/master/imgs/regular_octagon_helmholtz_71.53mm_radius_e_field.png)
+
 ### How does static-bs work?
 
 Static-bs works by solving the biot-savart law for finite line segments. The exact solution Static-bs uses can be found on page 9-4 (page 4 in the pdf) of this [course notes guide from MIT](http://web.mit.edu/viz/EM/visualizations/coursenotes/modules/guide09.pdf). Look for the section titled: "Example 9.1: Magnetic Field due to a Finite Straight Wire."
