@@ -5,6 +5,7 @@ No dependencies beyond numpy and scipy
 
 Sometimes you don't want a giant framework. Sometimes you just want some quick and easy bs!
 
+Authors: Josh Marks and Andrea Waite
 ****
 ### What questions can static-bs answer?
 
