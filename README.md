@@ -10,11 +10,15 @@ Sometimes you don't want a giant framework. Sometimes you just want some quick a
 
 Static-bs can answer questions like these:
 
-- What is the B field for a coil of wire given the current and the number of loops?
+- What is the B field at a specific point for a coil of wire given the current and the number of loops without using a large volume of points?
 - What does that 3D field look like?
 - How does the B field change if I have a bunch of coils oriented in a bunch of different ways?
 - What is the electric field if I have charged particles moving through the B field?
 - What is the voltage field I see from this electric field?
+
+### What is static-bs not good at doing?
+
+- Evaluating a large amount points or a lot of line segments quickly
 
 
 ### How do you use this fangled thing?
@@ -22,7 +26,7 @@ Static-bs can answer questions like these:
 1. ##### Start in the main.py file
 
    Here you will find the setup for the observation grid and the definition for the
-amount of current and number of loops in the coil. The observation grid are the
+amount of current and number of loops in the coil. The observation grid is the
 points where the B field will be evaluated.
 
    1. Adjust the observation grid to the dimensions and point density that you require
