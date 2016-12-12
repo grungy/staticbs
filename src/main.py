@@ -14,7 +14,7 @@ y = linspace(-0.1, 0.1, 100)
 z = zeros((100)) + 1e-2
 zz = zeros(x.shape + y.shape) + 1e-2
 
-xx, yy, zz = meshgrid(x, y, z)
+xx, yy = meshgrid(x, y)
 
 observation_points = rollaxis(np.array((xx, yy, zz)), 0, xx.ndim + 1)
 # observation_points = np.array([[[0,0,0]]])
