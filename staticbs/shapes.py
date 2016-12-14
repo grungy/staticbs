@@ -50,7 +50,7 @@ class octagon(loop):
     def __init__(self, h_straight_length_percent, v_straight_length_percent, vertical_axis, horizontal_axis, height):
         # height is the total height of the stack at the point where you start depositing the current layer
         # thickness later on is the height of the layer being currently deposited
-        self.theta = 45 * pi/180  # radians
+        self.theta = 45 * np.pi/180  # radians
         self.h_straight_length_percent = h_straight_length_percent
         self.v_straight_length_percent = v_straight_length_percent
         self.horizontal_axis = horizontal_axis
