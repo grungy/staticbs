@@ -5,13 +5,13 @@ No dependencies beyond numpy and scipy
 
 Sometimes you don't want a giant framework. Sometimes you just want some quick and easy bs!
 
-Authors: Josh Marks and Andrea Waite
+**Authors:** Josh Marks and Andrea Waite
 ****
 ### What questions can static-bs answer?
 
 Static-bs can answer questions like these:
 
-- What is the B field at a specific point for a coil of wire given the current and the number of loops without using a large volume of points?
+- What is the B field at a specific point for a coil of wire without having to use a large volume of points like a finite element solver?
 - What does that 3D field look like?
 - How does the B field change if I have a bunch of coils oriented in a bunch of different ways?
 - What is the electric field if I have charged particles moving through the B field?
@@ -19,7 +19,7 @@ Static-bs can answer questions like these:
 
 ### What is static-bs not good at doing?
 
-- Evaluating a large amount points or a lot of line segments quickly
+- Evaluating a large number of points or a lot of line segments quickly
 
 
 ### How do you use this fangled thing?
