@@ -24,34 +24,54 @@ Static-bs can answer questions like these:
 
 ### How do you use this fangled thing?
 
-1. ##### Start in the main.py file
+##### Start in the main.py file
 
-   Here you will find the setup for the observation grid and the definition for the
-amount of current and number of loops in the coil. The observation grid is the
-points where the B field will be evaluated.
+   Here you will find an example experiment setup.
 
-   1. Adjust the observation grid to the dimensions and point density that you require
-  2. If you don't care about looking at one of the dimensions you can speed up processing
+##### Setting up the observation grid and current
+
+The observation grid is the collection of points where the B field will be evaluated.
+
+ 1. Adjust the observation grid to the dimensions and point density that you require for your experiment.
+
+ 2. If you don't care about looking at one of the dimensions you can decrease the processing
   time by not including it. Look for the section in the code called "Example for how to ignore the z axis."
 
-   3. Set the current you would like in each loop of the coil
+ 3. Set the current you would like in each loop of the coil and how many loops you would like.
 
-   4. Don't forget to save your data by calling 'sim_obj.save()' at the end of the file.
+##### Creating your coil
 
-2. #### Setting up your simulation object
+Currently, there is a polygon class that can make regular polygons to approximate your coil shape. If you need a non-regular polygon shape, then create a class that inherits from the loop class and calculates the vertices of the non-regular shape. The new shape class then needs to call create_segments and pass in the vertices. Consider pushing your shape to the repo so others may use it too! Copy and paste the code block below into your shape class to do this.
 
-   The simulation object represents a unique experiment. It is meant for you to have a copy of this file for each different simulation. In this class you setup the different coils, the placement of the coils, and any other physical constants.
+```python
+self.segments = self.create_segments(self.vertices)
+```
 
-   1. **You will most likely only have to change the coil definition in the class**
-   2. Currently, there is a polygon class that can make regular polygons to approximate your coil shape.
-   3. If you need a non-regular polygon shape create a class that returns the vertices of that shape.
+  1. Look in the section called: *create coil*
+  2. Set the coil radius
+  3. Pass the number of sides, the center point of the polygon, and the polygon radius to the polygon class
 
-3. #### Run main.py from the command line
+##### Making a current object
+   1. Look in the section: *make a list of all of the current segments*
+   2. Call the get_segments() function of your coil.
+   3. If you have multiple coils simply add the outputs of this function call for each coil. See the code block below:
 
-4. #### Visualize your results by using plot.py
+```python
+# make a list of all of the current segments
+current_object = bs.iobjs.current_obj_list(coil.get_segments() + coil2.get_segments())
+```
+
+##### Don't forget to save your data by calling 'save()' function at the end of the file.
+  1. The save function will by default save in the data directory. This can be changed by passing a new value for the data_dir parameter.
+  2. Pass filename = data into the save function and it will save the data as the filename provided.
+
+#### Run main.py from the command line
+
+#### Visualize your results by using plot.py
    1. Plot.py takes two command line arguments:
       * the location of the B field data
       * the location of the E field data if applicable
+
 
 
 ### Output examples
@@ -71,13 +91,7 @@ The vertices returned by the polygon class or a user created class are used to c
 
 ### Things that still need to be done
 
-1. Possibly change the simulation object architecture so users don't have to edit a class.
-
 2. Update plot.py to automagically determine which axis you might have ignored and plot appropriately.
-
-3. Update the save function in simulation object to accept file names
-
-4. Generally clean up the code by removing my application specific code from it.
 
 5. Implement some kind of SVG gobbling class, so coils can be drawn and easily imported
 

@@ -47,7 +47,7 @@ coil_radius = 0.1  # meters
 coil = bs.shapes.polygon(8, (0,0,0), coil_radius)
 
 # make a list of all of the current segments
-current_object = bs.iobjs.current_obj_list(coil.get_segments())
+current_object = bs.iobjs.current_obj_list(coil.get_segments() )
 
 #make e field object
 e_field = bs.eobjs.e_field(amp_turns, current_object, velocity)
