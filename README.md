@@ -96,3 +96,5 @@ The vertices returned by the polygon class or a user created class are used to c
 5. Implement some kind of SVG gobbling class, so coils can be drawn and easily imported
 
 6. Time varying solutions?
+
+4. Easily reverse the order of the vertices to change the direction of current flow.

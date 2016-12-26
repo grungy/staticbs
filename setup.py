@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='staticbs',
-      version='0.1',
+      version='0.11',
       description='A simple 3D electro-magnetostatic biot-savart solving simulator',
       classifiers=[
         'Development Status :: 5 - Production/Stable',
